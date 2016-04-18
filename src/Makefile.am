@@ -1,3 +1,3 @@
-bin_PROGRAMS=a.out
-a_out_SOURCES=id3tovorbis.c
-
+AUTOMAKE_OPTIONS = foreign
+bin_PROGRAMS = id3vorbis
+id3vorbis_SOURCES = id3tovorbis.c
