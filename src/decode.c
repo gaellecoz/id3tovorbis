@@ -16,11 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+/*
+ * decode.c
+ *
+ *  Created on: Apr 20, 2016
+ *      Author: gaellecoz
+ */
 
 
-int main(void) {
-	puts("Hello World"); /* prints Hello World */
-	return EXIT_SUCCESS;
-}
