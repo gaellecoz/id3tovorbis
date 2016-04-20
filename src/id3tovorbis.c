@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Split - Split accounting amongst friends for travels or other group activities.
+ * id3tovorbis - Copy ID3 based tags to Vorbis based tags.
  * Copyright (c) 2016 Gaël Le Coz.
  *
  * This program is free software: you can redistribute it and/or modify
