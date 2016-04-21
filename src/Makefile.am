@@ -1,3 +1,3 @@
 AUTOMAKE_OPTIONS = foreign
-bin_PROGRAMS = id3vorbis
-id3vorbis_SOURCES = id3tovorbis.c decode.c
+bin_PROGRAMS = id3tovorbis
+id3tovorbis_SOURCES = id3tovorbis.cpp decode.cpp
