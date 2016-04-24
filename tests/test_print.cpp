@@ -19,6 +19,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../src/transcoder.h"
+
+using namespace std;
+
+static string testFile1 ("audio_test_id3.m4a");
+static string testFile2 ("audio_test_vorbis.ogg");
+
 int main(void) {
-	return EXIT_FAILURE;
+
+	try {
+		Tag* t;
+
+		t = Transcoder::ReadTag(testFile1);
+		Transcoder::PrintTag(t);
+
+		t = Transcoder::ReadTag(testFile2);
+		Transcoder::PrintTag(t);
+
+		return EXIT_SUCCESS;
+	} catch (const exception& e) {
+		cout << e.what();
+		return EXIT_FAILURE;
+	}
 }

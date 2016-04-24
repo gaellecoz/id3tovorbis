@@ -17,10 +17,27 @@
  *******************************************************************************/
 
 /*
- * decode.c
+ * transcoder.h
  *
- *  Created on: Apr 20, 2016
+ *  Created on: Apr 24, 2016
  *      Author: gaellecoz
  */
 
+#ifndef TRANSCODER_H_
+#define TRANSCODER_H_
 
+#include <taglib/tag.h>
+
+using namespace std;
+using namespace TagLib;
+
+class Transcoder {
+	public:
+		static Tag* ReadTag(string filename);
+		static void WriteTag(string filename, char * tag);
+		static void PrintTag(Tag* tag);
+};
+
+
+
+#endif /* TRANSCODER_H_ */
