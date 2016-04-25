@@ -31,7 +31,7 @@ AC_PATH_PROG(TAGLIB_CONFIG, taglib-config)
 			AC_MSG_ERROR([taglib-config executable is missing])
 		fi
 	fi
-LIBS="$LIBS -ltag"	
+LIBS="$LIBS -ltag"
 
 AC_CHECK_LIB([z], [inflate], [], [AC_MSG_ERROR([zlib not found])])
 

@@ -1,4 +1,4 @@
-AUTOMAKE_OPTIONS = foreign
+AUTOMAKE_OPTIONS = subdir-objects foreign
 check_PROGRAMS = decode_id3 print
 TESTS = $(check_PROGRAMS)
 
