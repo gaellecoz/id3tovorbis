@@ -28,10 +28,9 @@
 
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
+#include <taglib/mp4/mp4file.h>
 
 #include "transcoder.h"
-
-using namespace std;
 
 Tag* Transcoder::ReadTag(string filename) {
 	TagLib::FileRef f(filename.c_str(), false);
@@ -43,9 +42,28 @@ Tag* Transcoder::ReadTag(string filename) {
 	return f.tag();
 }
 
+Tag* Transcoder::ReadTag(string filename, FileType type) {
+	TagLib::File *f;
+
+	switch (type) {
+		case M4A:
+			f = &TagLib::FileRef(filename.c_str(), false);
+		break;
+		case OGG:
+		break;
+	}
 
 
-void Transcoder::WriteTag(string filename, char * tag) {
+	if (f->tag() == NULL) {
+		throw new invalid_argument("Error opening file");
+	}
+
+	return f->tag();
+}
+
+
+
+void Transcoder::WriteTag(string filename, Tag* tag) {
 	return;
 }
 

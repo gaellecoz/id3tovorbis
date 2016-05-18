@@ -20,27 +20,12 @@
 #include <stdlib.h>
 
 #include "../src/transcoder.h"
-#include "../src/types.h"
 
-using namespace std;
-
-static string testFile1 ("audio_test_id3.m4a");
-static string testFile2 ("audio_test_vorbis.ogg");
+static string testFile ("audio_test_vorbis.ogg");
 
 int main(void) {
 
-	try {
-		Tag* t;
+	Transcoder::ReadTag(testFile);
 
-		t = Transcoder::ReadTag(testFile1, FileType.M4A);
-		Transcoder::PrintTag(t);
-
-		t = Transcoder::ReadTag(testFile2, FileType.OGG);
-		Transcoder::PrintTag(t);
-
-		return EXIT_SUCCESS;
-	} catch (const exception& e) {
-		cout << e.what();
-		return EXIT_FAILURE;
-	}
+	return EXIT_FAILURE;
 }

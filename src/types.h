@@ -16,31 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+/*
+ * types.h
+ *
+ *  Created on: Apr 24, 2016
+ *      Author: gaellecoz
+ */
 
-#include "../src/transcoder.h"
-#include "../src/types.h"
+#ifndef TYPES_H_
+#define TYPES_H_
 
-using namespace std;
+typedef enum {M4A, OGG} FileType;
 
-static string testFile1 ("audio_test_id3.m4a");
-static string testFile2 ("audio_test_vorbis.ogg");
+typedef enum {ID3V2, VORBIS} TagType;
 
-int main(void) {
 
-	try {
-		Tag* t;
-
-		t = Transcoder::ReadTag(testFile1, FileType.M4A);
-		Transcoder::PrintTag(t);
-
-		t = Transcoder::ReadTag(testFile2, FileType.OGG);
-		Transcoder::PrintTag(t);
-
-		return EXIT_SUCCESS;
-	} catch (const exception& e) {
-		cout << e.what();
-		return EXIT_FAILURE;
-	}
-}
+#endif /* TYPES_H_ */

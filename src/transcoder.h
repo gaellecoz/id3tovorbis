@@ -28,13 +28,16 @@
 
 #include <taglib/tag.h>
 
+#include "types.h"
+
 using namespace std;
 using namespace TagLib;
 
 class Transcoder {
 	public:
 		static Tag* ReadTag(string filename);
-		static void WriteTag(string filename, char * tag);
+		static Tag* ReadTag(string filename, FileType type);
+		static void WriteTag(string filename, Tag* tag);
 		static void PrintTag(Tag* tag);
 };
 
