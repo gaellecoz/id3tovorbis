@@ -16,31 +16,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef ID3TOVORBIS_TEST_H_
+#define ID3TOVORBIS_TEST_H_
 
-#include "../src/transcoder.h"
-#include "../src/types.h"
+#include <taglib/tag.h>
 
-using namespace std;
+using namespace TagLib;
 
-static string testFile1 ("audio_test_id3.m4a");
-static string testFile2 ("audio_test_vorbis.ogg");
+class TestId3Vorbis {
+	private:
+		Tag* tagId3;
+		Tag* tagVorbis;
 
-int main(void) {
+		void FillId3(Tag* t);
+		void FillVorbis(Tag* t);
+	public:
+		TestId3Vorbis();
+		~TestId3Vorbis();
+		int CompareTags(Tag* tag1, Tag* tag2);
+};
 
-	try {
-		FileRef* f;
-
-		f = Transcoder::ReadTag(testFile1);
-		Transcoder::PrintTag(f);
-
-		f = Transcoder::ReadTag(testFile2);
-		Transcoder::PrintTag(f);
-
-		return EXIT_SUCCESS;
-	} catch (const exception& e) {
-		cout << e.what();
-		return EXIT_FAILURE;
-	}
-}
+#endif /* ID3TOVORBIS_TEST_H_ */

@@ -1,6 +1,10 @@
-find . -type f -name "Makefile" -exec rm {} \;
-find . -type f -name "Makefile.in" -exec rm {} \;
-find . -type d -name ".deps" -exec rm -rf {} \;
+find src tests -type f -name "Makefile" -exec rm {} \;
+find src tests -type f -name "Makefile.in" -exec rm {} \;
+find src tests -type d -name ".deps" -exec rm -rf {} \;
+rm Makefile
+rm Makefile.in
+
+find src tests -type f -name "*.o" -exec rm {} \;
 
 rm .autotools
 rm INSTALL

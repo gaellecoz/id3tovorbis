@@ -35,8 +35,6 @@ LIBS="$LIBS -ltag"
 
 AC_CHECK_LIB([z], [inflate], [], [AC_MSG_ERROR([zlib not found])])
 
-
-
 # Checks for header files.
 AC_HEADER_STDC
 AC_CHECK_HEADERS([stdio.h])
@@ -47,7 +45,9 @@ AC_CHECK_HEADERS([taglib/tag.h], [], [AC_MSG_ERROR([libtag header not found])])
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_SIZE_T
 
-# Checks for library functions.
+
+# Set default compile flags
+CXXFLAGS="$CXXFLAGS -Wall -Wextra -Werror"
 
 AC_CONFIG_FILES([Makefile
 				m4/Makefile

@@ -23,10 +23,11 @@
  *      Author: gaellecoz
  */
 
-#ifndef TRANSCODER_H_
-#define TRANSCODER_H_
+#ifndef ID3TOVORBIS_TRANSCODER_H_
+#define ID3TOVORBIS_TRANSCODER_H_
 
 #include <taglib/tag.h>
+#include <taglib/fileref.h>
 
 #include "types.h"
 
@@ -35,12 +36,12 @@ using namespace TagLib;
 
 class Transcoder {
 	public:
-		static Tag* ReadTag(string filename);
+		static FileRef* ReadTag(string filename);
 		static Tag* ReadTag(string filename, FileType type);
-		static void WriteTag(string filename, Tag* tag);
-		static void PrintTag(Tag* tag);
+		static void WriteTag(string filename = NULL, Tag* tag = NULL);
+		static void PrintTag(FileRef* f);
 };
 
 
 
-#endif /* TRANSCODER_H_ */
+#endif /* ID3TOVORBIS_TRANSCODER_H_ */

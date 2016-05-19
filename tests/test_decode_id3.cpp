@@ -25,9 +25,12 @@ static string testFile ("audio_test_id3.m4a");
 
 int main(void) {
 
-	Transcoder::ReadTag(testFile);
+	FileRef *f = Transcoder::ReadTag(testFile);
 
+	if (!f) {
 
+		return EXIT_FAILURE;
+	}
 
 	return EXIT_FAILURE;
 }
