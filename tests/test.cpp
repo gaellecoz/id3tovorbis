@@ -65,13 +65,13 @@ TRACKNUMBER - "1/1"
 */
 
 TestId3Vorbis::TestId3Vorbis() {
-	Tag* t;
+	TagLib::Tag* t;
 
 
-	t = new ID3v2::Tag();
+	t = new TagLib::ID3v2::Tag();
 	tagId3 = t;
 
-	t = new Ogg::XiphComment();
+	t = new TagLib::Ogg::XiphComment();
 	tagVorbis = t;
 }
 
@@ -85,7 +85,7 @@ TestId3Vorbis::~TestId3Vorbis() {
 	}
 }
 
-void TestId3Vorbis::FillId3(Tag* t) {
+void TestId3Vorbis::FillId3(TagLib::Tag* t) {
 
 	t->setTitle(TEST_TAG_TITLE_ID3);
 	t->setArtist(TEST_TAG_ARTIST_ID3);
@@ -105,7 +105,7 @@ void TestId3Vorbis::FillId3(Tag* t) {
 	//checkForRejectedProperties((*it).file()->setProperties(map));
 }
 
-void TestId3Vorbis::FillVorbis(Tag* t) {
+void TestId3Vorbis::FillVorbis(TagLib::Tag* t) {
 
 	t->setTitle(TEST_TAG_TITLE_ID3);
 	t->setArtist(TEST_TAG_ARTIST_ID3);
@@ -125,7 +125,7 @@ void TestId3Vorbis::FillVorbis(Tag* t) {
 	//checkForRejectedProperties((*it).file()->setProperties(map));
 }
 
-int TestId3Vorbis::CompareTags(Tag* tag1, Tag* tag2) {
+int TestId3Vorbis::CompareTags(TagLib::Tag* tag1, TagLib::Tag* tag2) {
 
 	if (!tag1) {
 		return 1;

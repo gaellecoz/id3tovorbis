@@ -21,19 +21,17 @@
 
 #include <taglib/tag.h>
 
-using namespace TagLib;
-
 class TestId3Vorbis {
 	private:
-		Tag* tagId3;
-		Tag* tagVorbis;
+		TagLib::Tag* tagId3;
+		TagLib::Tag* tagVorbis;
 
-		void FillId3(Tag* t);
-		void FillVorbis(Tag* t);
+		void FillId3(TagLib::Tag* t);
+		void FillVorbis(TagLib::Tag* t);
 	public:
 		TestId3Vorbis();
 		~TestId3Vorbis();
-		int CompareTags(Tag* tag1, Tag* tag2);
+		int CompareTags(TagLib::Tag* tag1, TagLib::Tag* tag2);
 };
 
 #endif /* ID3TOVORBIS_TEST_H_ */
